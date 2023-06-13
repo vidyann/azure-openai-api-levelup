@@ -52,9 +52,6 @@ jobs:
         dotnet build --configuration Release --output ./output
         popd
         
-    - name: DISPLAY SECRETS
-      run: echo ${{secrets.AZURE_FUNCTIONAPP_PUBLISH_PROFILE}} | sed 's/./& /g'
-      
     - name: 'Run Azure Functions Action'
       uses: Azure/functions-action@v1
       id: fa
